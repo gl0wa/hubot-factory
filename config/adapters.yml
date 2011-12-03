@@ -14,29 +14,6 @@
       desc: "Campfire account subdomain"
 
 -
-  name: "Email"
-  desc: "Email adapter"
-  vars:
-    -
-      name: "HUBOT_EMAIL_USERNAME"
-      desc: "Email account username"
-    -
-      name: "HUBOT_EMAIL_PASSWORD"
-      desc: "Email account password"
-    -
-      name: "HUBOT_IMAP_HOST"
-      desc: "IMAP server address"
-    -
-      name: "HUBOT_IMAP_PORT"
-      desc: "IMAP server port"
-    -
-      name: "HUBOT_IMAP_SECURE"
-      desc: "IMAP sever secure connection, leave blank if not required"
-    -
-      name: "HUBOT_MAILBOX"
-      desc: "IMAP mailbox to check"
-
--
   name: "Flowdock"
   desc: "Flowdock adapter"
   vars:
@@ -63,17 +40,6 @@
     -
       name: "HUBOT_GTALK_WHITELIST_USERS"
       desc: "Hubot will accept contact requests from these users"
-
--
-  name: "GroupMe"
-  desc: "GroupMe adapter"
-  vars:
-    -
-      name: "HUBOT_GROUPME_ROOM"
-      desc: "GroupMe room ID"
-    -
-      name: "HUBOT_GROUPME_TOKEN"
-      desc: "GroupMe API token"
 
 -
   name: "HipChat"
@@ -119,6 +85,14 @@
       desc: "IRC nickserv password, leave blank if not required"
 
 -
+  name: "Partychat-Hooks"
+  desc: "Partychat-hooks Adapter"
+  vars:
+    -
+      name: "HUBOT_POST_ENDPOINT"
+      desc: "Partychat Hook Endpoint"
+
+-
   name: "Talker"
   desc: "Talker adapter"
   vars:
@@ -128,23 +102,6 @@
     -
       name: "HUBOT_TALKER_ROOMS"
       desc: "Talker rooms to join, separated to commas"
-
--
-  name: "Twitter"
-  desc: "Twitter adapter"
-  vars:
-    -
-      name: "HUBOT_TWITTER_KEY"
-      desc: "Twitter OAuth key"
-    -
-      name: "HUBOT_TWITTER_SECRET"
-      desc: "Twitter OAuth secret"
-    -
-      name: "HUBOT_TWITTER_TOKEN"
-      desc: "Twitter OAuth token"
-    -
-      name: "HUBOT_TWITTER_TOKEN_SECRET"
-      desc: "Twitter OAuth token secret"
 
 -
   name: "Twilio"
@@ -159,18 +116,4 @@
     -
       name: "HUBOT_SMS_FROM"
       desc: "Twilio number to send the reply from"
-
--
-  name: "XMPP"
-  desc: "XMPP adapters"
-  vars:
-    -
-      name: "HUBOT_XMPP_USERNAME"
-      desc: "XMPP account username"
-    -
-      name: "HUBOT_XMPP_PASSWORD"
-      desc: "XMPP account password"
-    -
-      name: "HUBOT_XMPP_ROOMS"
-      desc: "XMPP rooms, separated by commas"
 

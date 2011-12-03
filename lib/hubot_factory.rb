@@ -1,4 +1,5 @@
 require "httparty"
+require "json"
 require "mustache"
 require "mustache/sinatra"
 require "pony"

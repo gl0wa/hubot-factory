@@ -22,5 +22,19 @@ module HubotFactory
       system "sed", "-i", "s/-a campfire/-a #{adapter}/", "Procfile"
       system "sed", "-i", "s/app:/#{process}:/", "Procfile"
     end
+
+    # Add the required adapter package as a dependency into `package.json`.
+    #
+    # adapter - A String of the adapter for the robot.
+    #
+    # Returns nothing.
+    def self.add_adapter_package(adapter)
+      pkg  = JSON.parse(File.read("package.json"))
+      pkg["dependencies"]["hubot-#{adapter}"] = ">= 0.0.1"
+
+      File.open("package.json", "w") do |f|
+        f.write(JSON.pretty_generate(pkg))
+      end
+    end
   end
 end
