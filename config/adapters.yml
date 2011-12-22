@@ -2,6 +2,7 @@
 -
   name: "Campfire"
   desc: "Campfire adapter"
+  url: "http://campfirenow.com"
   vars:
     -
       name: "HUBOT_CAMPFIRE_TOKEN"
@@ -16,6 +17,7 @@
 -
   name: "Flowdock"
   desc: "Flowdock adapter"
+  url: "https://flowdock.com"
   vars:
     -
       name: "HUBOT_FLOWDOCK_LOGIN_EMAIL"
@@ -27,6 +29,7 @@
 -
   name: "GTalk"
   desc: "Google Talk adapter"
+  url: "http://talk.google.com"
   vars:
     -
       name: "HUBOT_GTALK_USERNAME"
@@ -44,6 +47,7 @@
 -
   name: "HipChat"
   desc: "HipChat adapter"
+  url: "https://www.hipchat.com"
   vars:
     -
       name: "HUBOT_HIPCHAT_TOKEN"
@@ -64,6 +68,7 @@
 -
   name: "IRC"
   desc: "IRC adapter"
+  url: "http://en.wikipedia.org/wiki/IRC"
   vars:
     -
       name: "HUBOT_IRC_NICK"
@@ -87,6 +92,7 @@
 -
   name: "Partychat-Hooks"
   desc: "Partychat-hooks Adapter"
+  url: "http://partychat-hooks.appspot.com/"
   vars:
     -
       name: "HUBOT_POST_ENDPOINT"
@@ -95,6 +101,7 @@
 -
   name: "Talker"
   desc: "Talker adapter"
+  url: "http://talkerapp.com"
   vars:
     -
       name: "HUBOT_TALKER_TOKEN"
@@ -106,6 +113,7 @@
 -
   name: "Twilio"
   desc: "Twilio adapter"
+  url: "http://www.twilio.com"
   vars:
     -
       name: "HUBOT_SMS_SID"
@@ -116,4 +124,43 @@
     -
       name: "HUBOT_SMS_FROM"
       desc: "Twilio number to send the reply from"
+
+-
+  name: "Twitter"
+  desc: "Twitter adapter"
+  url: "https://twitter.com"
+  vars:
+    -
+      name: "HUBOT_TWITTER_KEY"
+      desc: "Twitter consumer key"
+    -
+      name: "HUBOT_TWITTER_SECRET"
+      desc: "Twitter consumer secret"
+    -
+      name: "HUBOT_TWITTER_TOKEN"
+      desc: "Twitter access token"
+    -
+      name: "HUBOT_TWITTER_TOKEN_SECRET"
+      desc: "Twitter access token secret"
+
+-
+  name: "XMPP"
+  desc: "XMPP adapter"
+  url: "http://www.jabber.org/"
+  vars:
+    -
+      name: "HUBOT_XMPP_USERNAME"
+      desc: "XMPP username"
+    -
+      name: "HUBOT_XMPP_PASSWORD"
+      desc: "XMPP password"
+    -
+      name: "HUBOT_XMPP_ROOMS"
+      desc: "XMPP rooms to join, separated with commas"
+    -
+      name: "HUBOT_XMPP_HOST"
+      desc: "XMPP server hostname"
+    -
+      name: "HUBOT_XMPP_PORT"
+      desc: "XMPP server port"
 
