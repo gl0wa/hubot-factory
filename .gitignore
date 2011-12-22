@@ -1,5 +1,5 @@
-*.gem
-.bundle
+.bundle/
+bin/
 config/config.yml
-pkg/*
-vendor/*
+pkg/
+vendor/
