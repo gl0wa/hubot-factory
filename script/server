@@ -2,4 +2,4 @@
 : ${RACK_ENV:="development"}
 export RACK_ENV
 
-bin/shotgun -p9393 -sthin config.ru
+bin/shotgun -o 0.0.0.0 -p 9393 -sthin config.ru
