@@ -2,15 +2,13 @@ module HubotFactory
   class App < Sinatra::Base
     register Mustache::Sinatra
 
-    dir = File.expand_path("../../../", __FILE__)
-
-    set :root,   dir
-    set :static, true
+    set :app_file, __FILE__
+    set :static,   true
 
     set :mustache, {
       :namespace => HubotFactory,
-      :views     => "#{dir}/views",
-      :templates => "#{dir}/templates"
+      :views     => "#{root}/views",
+      :templates => "#{root}/templates"
     }
 
     not_found do

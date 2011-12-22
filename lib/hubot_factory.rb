@@ -34,5 +34,4 @@ require "hubot_factory/build_hubot"
 require "hubot_factory/app"
 require "hubot_factory/api_app"
 require "hubot_factory/version"
-
-require "views/layout"
+require "hubot_factory/views/layout"
