@@ -1,0 +1,5 @@
+#!/bin/sh
+: ${RACK_ENV:="development"}
+export RACK_ENV
+
+bin/shotgun -p9393 -sthin config.ru
