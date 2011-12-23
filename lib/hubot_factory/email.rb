@@ -22,7 +22,7 @@ module HubotFactory
     #
     # Returns nothing.
     def self.render_email(name, adapter, adapter_vars)
-      path = File.expand_path("../../../templates/email.mustache", __FILE__)
+      path = File.expand_path("../templates/email.mustache", __FILE__)
       tmpl = IO.read(path)
       body = Mustache.render(tmpl, :name         => name,
                                    :adapter      => adapter,
