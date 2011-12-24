@@ -25,14 +25,11 @@ module HubotFactory
       mustache :index
     end
 
-    get "/api_docs" do
-      mustache :api_docs
-    end
-
     post "/build" do
       @email        = params[:email]
       @name         = params[:name]
       @adapter      = params[:adapter]
+
       @adapter_vars = params.keys.grep(/^adapter-/i).map do |k|
         { :var => k[8..-1], :val => params[k] }
       end
@@ -42,8 +39,32 @@ module HubotFactory
       end
 
       Resque.enqueue(BuildHubot, @email, @name, nil, @adapter, @adapter_vars)
-      @title = "You're Hubot is being Built - Hubot Factory"
+      @title = "Your Hubot is being Built - Hubot Factory"
       mustache :build
+    end
+
+    get "/janky" do
+      mustache :janky
+    end
+
+    post "/janky/build" do
+      @email = params[:email]
+
+      @config_vars = params.keys.grep(/^config-/i).map do |k|
+        { :var => k[7..-1], :val => params[k] }
+      end
+
+      @config_vars.select! do |item|
+        item[:val] && item[:val] != ""
+      end
+
+      Resque.enqueue(BuildJanky, @email, @config_vars)
+      @title = "Your Janky is being deployed - Hubot Factory"
+      mustache :build_janky
+    end
+
+    get "/api_docs" do
+      mustache :api_docs
     end
 
     get "/about" do

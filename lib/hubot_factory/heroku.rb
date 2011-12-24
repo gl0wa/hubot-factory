@@ -4,22 +4,25 @@ module HubotFactory
     #
     # Returns nothing.
     def self.addon_add(addon)
-      system "heroku addon:add #{addon}"
+      system "heroku addons:add #{addon}"
     end
 
     # Set the Heroku config variables.
     #
     # Returns nothing.
     def self.config(variables)
+      puts variables.inspect
       vars = variables.map { |v| "#{v["var"]}=\"#{v["val"]}\"" }
       system "heroku config:add #{vars.join(" ")}"
     end
 
     # Create a new Heroku application on the cedar stack.
     #
-    # Returns nothing.
+    # Returns a String of the Heroku application URL.
     def self.create
-      system "heroku create --stack cedar"
+      output = `heroku create --stack cedar`
+      puts output
+      output[/\A.+?\n(.+?)\s\|/, 1]
     end
 
     # Run the command on the Heroku application.
@@ -33,7 +36,7 @@ module HubotFactory
     #
     # Returns nothing.
     def self.scale(process=nil)
-      process = "app" unless process
+      process = "web" unless process
       system "heroku ps:scale #{process}=1"
     end
 

@@ -26,13 +26,13 @@ Pony.options = {
 }
 
 require "hubot_factory/adapters"
-require "hubot_factory/bundler"
 require "hubot_factory/email"
 require "hubot_factory/heroku"
 require "hubot_factory/hubot"
 require "hubot_factory/git"
 require "hubot_factory/build_hubot"
+require "hubot_factory/build_janky"
 require "hubot_factory/app"
 require "hubot_factory/api_app"
-require "hubot_factory/version"
 require "hubot_factory/views/layout"
+require "hubot_factory/version"
