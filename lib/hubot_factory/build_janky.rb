@@ -39,6 +39,9 @@ module HubotFactory
       # Step 11: heroku run rake db:migrate
       # Heroku.run "rake db:migrate"
 
+      # Step 12: heroku ps:scale app=1
+      # Heroku.scale
+
     end
   end
 end
