@@ -2,19 +2,12 @@ module HubotFactory
   module Hubot
     # Create a new Hubot with the specified name.
     #
-    # hubot_bin - A String of the path to the Hubot binary.
-    # name      - A String of the robot name.
-    #
     # Returns nothing.
     def self.create(hubot_bin,  name)
       system "#{hubot_bin} -c . -n #{name}"
     end
 
     # Configure the Procfile with the specified name, adapter and process type.
-    #
-    # name    - A String of the name of the robot.
-    # adapter - A String of the adapter for the robot.
-    # process - A String of the process type.
     #
     # Returns nothing.
     def self.procfile(name, adapter, process)
@@ -24,8 +17,6 @@ module HubotFactory
     end
 
     # Add the required adapter package as a dependency into `package.json`.
-    #
-    # adapter - A String of the adapter for the robot.
     #
     # Returns nothing.
     def self.add_adapter_package(adapter)

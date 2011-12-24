@@ -26,6 +26,7 @@ Pony.options = {
 }
 
 require "hubot_factory/adapters"
+require "hubot_factory/bundler"
 require "hubot_factory/email"
 require "hubot_factory/heroku"
 require "hubot_factory/hubot"

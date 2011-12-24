@@ -4,8 +4,8 @@ module HubotFactory
     # Clone the git repository at the URL.
     #
     # Returns nothing.
-    def self.clone(url)
-      system "git clone #{url}"
+    def self.clone(url, directory=nil)
+      system "git clone #{url} #{directory}"
     end
 
     # Initialize the current directory as a git repository.

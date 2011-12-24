@@ -12,12 +12,6 @@ module HubotFactory
 
     # Builds and deploys a Hubot instance to Heroku.
     #
-    # email        - A String of the email of the target Heroku account.
-    # name         - A String of the name of the robot.
-    # url          - A String of a URL to send a notification to.
-    # adapter      - A String of the adapter for the robot.
-    # adapter_vars - An Array of Hashes of environment variables to set.
-    #
     # Returns nothing.
     def self.perform(email, name, url, adapter, adapter_vars)
       process = adapter.downcase == "twilio" ? "web" : "app"
@@ -44,11 +38,7 @@ module HubotFactory
       Heroku.transfer(email, Settings.secrets["heroku_user"])
 
       adapter_vars.each do |v|
-        if v["var"].downcase.include?("password") ||
-          v["var"].downcase.include?("token")
-
-          v["val"] = "*********"
-        end
+        v["val"] = "****" if %w{ password token }.include?(v["var"].downcase)
       end
 
       Email.send_notification(email, name, adapter, adapter_vars)
