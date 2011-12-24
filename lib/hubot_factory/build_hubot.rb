@@ -33,7 +33,7 @@ module HubotFactory
 
       Git.init
       Git.add
-      Git.commit
+      Git.commit "Initial commit"
 
       Heroku.create
       Heroku.config(adapter_vars)
