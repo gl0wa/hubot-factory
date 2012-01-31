@@ -14,7 +14,7 @@ module HubotFactory
     #
     # Returns nothing.
     def self.perform(email, name, url, adapter, adapter_vars)
-      process = adapter.downcase == "twilio" ? "web" : "app"
+      process = "web"
 
       Dir.chdir(Dir.mktmpdir("#{name}-"))
 
