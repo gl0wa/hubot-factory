@@ -1,13 +1,17 @@
-<div class="hubot">
+<h1>Hubot Factory</h1>
+
+<div class="beta">
   <p>
-    <a href="http://github.com"><img alt="Hubot" src="/images/hubot.png" /></a>
-  </p>
-  <p>
-    <a href="http://hubot.github.com">Hubot from GitHub</a>
+    Unfortunately, at the end of the month (April) I am going to be unable to
+    host the hubot-factory worker process myself. If you are interested in
+    helping run the worker process, please send an email to
+    <a href="mailto:hello+hubotfactory@tomb.io">hello+hubotfactory@tomb.io</a>.
   </p>
 </div>
 
-<h1>Build and Deploy a Hubot</h1>
+<div class="avatar">
+  <img src="/images/hubot-avatar.png" alt="Hubot" />
+</div>
 
 <p>
   Want to run your own <a href="http://hubot.github.com">Hubot</a>? Want to
@@ -17,18 +21,8 @@
 
 <p>
   When your Hubot has been built and deployed, which includes transferring it
-  to your Heroku account. We will send you a notification to the email
-  specified below.
+  to your Heroku account. We will send you a notification email.
 </p>
-
-<div class="beta">
-  <p>
-    <strong>Thanks for trying the public beta!</strong> Hubot Factory is still
-    under active development and tweaking. If you come across issues when
-    deploying your Hubot please email
-    <a href="mailto:hello+hubot@tombell.org.uk">hello+hubot@tombell.org.uk</a>
-  </p>
-</div>
 
 <form action="/build" id="build-hubot" method="post">
 
@@ -41,7 +35,7 @@
 
   <p>
     <label for="email">Your Email:</label>
-    <input type="text"placeholder="hubot@example.com" name="email" />
+    <input type="text" placeholder="hubot@example.com" name="email" />
   </p>
 
   <h2>About Your Hubot</h2>
@@ -64,14 +58,6 @@
   <p>
     <label>Hubot Adapter</label>
   </p>
-
-  <div class="beta">
-    <p>
-      If you don't see the adapter you would like to use on this list, please
-      use the email above to say it's missing and we'll add it as soon as
-      possible.
-    </p>
-  </div>
 
   {{#hubot_adapters}}
 
@@ -107,7 +93,7 @@
     we will email to you let you know.
   </p>
 
-  <p>
-    <input type="submit" name="submit" value="Build & Deploy" />
+  <p style="text-align:center;">
+    <input class="blue-pill" type="submit" name="submit" value="Build & Deploy" />
   </p>
 </form>
