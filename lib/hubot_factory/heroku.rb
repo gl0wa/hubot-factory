@@ -10,10 +10,11 @@ module HubotFactory
     # Set the Heroku config variables.
     #
     # Returns nothing.
-    def self.config(variables)
+    def self.config(app_url, variables)
       puts variables.inspect
       vars = variables.map { |v| "#{v["var"]}=\"#{v["val"]}\"" }
       system "heroku config:add #{vars.join(" ")}"
+      system "heroku config:add HEROKU_URL=#{app_url}"
     end
 
     # Create a new Heroku application on the cedar stack.

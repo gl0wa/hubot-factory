@@ -32,9 +32,9 @@ module HubotFactory
       
       Git.commit "Initial commit"
 
-      Heroku.create
+      app_url = Heroku.create
 
-      Heroku.config(adapter_vars)
+      Heroku.config(app_url, adapter_vars)
 
       Git.push "heroku", "master"
 
