@@ -12,15 +12,6 @@ module HubotFactory
       send_email(email, "Your Hubot is Ready", body)
     end
 
-    # Send a rendered email notification to the user that their Janky has been
-    # deployed to Heroku.
-    #
-    # Returns nothing.
-    def self.send_janky_email(email, config_vars)
-      body = render_email("janky", :config_vars => config_vars)
-      send_email(email, "Your Janky is Ready", body)
-    end
-
     # Render the mustache template of the email body.
     #
     # Returns nothing.

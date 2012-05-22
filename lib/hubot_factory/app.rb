@@ -43,30 +43,6 @@ module HubotFactory
       mustache :build
     end
 
-    get "/janky" do
-      mustache :janky
-    end
-
-    post "/janky/build" do
-      @email = params[:email]
-
-      @config_vars = params.keys.grep(/^config-/i).map do |k|
-        { :var => k[7..-1], :val => params[k] }
-      end
-
-      @config_vars.select! do |item|
-        item[:val] && item[:val] != ""
-      end
-
-      Resque.enqueue(BuildJanky, @email, @config_vars)
-      @title = "Your Janky is being deployed - Hubot Factory"
-      mustache :build_janky
-    end
-
-    get "/api_docs" do
-      mustache :api_docs
-    end
-
     get "/about" do
       @title = "About - Hubot Factory"
       mustache :about
