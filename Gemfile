@@ -1,13 +1,13 @@
-source "http://rubygems.org"
+source :rubygems
 
-gem "heroku"
 gem "httparty"
 gem "mustache"
 gem "pony"
 gem "resque"
 gem "sinatra"
-gem "thin"
+gem "unicorn"
+gem "yajl-ruby"
 
 group :development do
-  gem "shotgun"
+  gem "foreman"
 end

@@ -5,8 +5,8 @@ require "resque/server"
 require "hubot_factory"
 
 Resque::Server.use(Rack::Auth::Basic) do |user, password|
-  user == HubotFactory::Settings.secrets["resque_user"] &&
-  password == HubotFactory::Settings.secrets["resque_pass"]
+  user == HubotFactory::Settings.resque_web_user &&
+  password == HubotFactory::Settings.resque_web_pass
 end
 
 map "/" do

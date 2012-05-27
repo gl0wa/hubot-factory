@@ -3,3 +3,4 @@ bin/
 config/config.yml
 pkg/
 vendor/
+.env
